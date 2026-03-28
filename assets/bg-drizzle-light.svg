@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#eef7ff"/>
+  <g fill="#ffffff" opacity="0.80">
+    <path d="M320 275c48-54 138-58 192-9 40-24 92-21 125 9 40-29 98-26 135 11 63-18 137 14 160 74 47 7 83 48 83 99 0 55-44 100-99 100H320c-72 0-131-59-131-132 0-69 52-125 119-131 3-4 7-8 12-20z"/>
+  </g>
+  <g stroke="#0ea5e9" stroke-width="5" stroke-linecap="round" opacity="0.28">
+    <path d="M450 520l-22 66"/>
+    <path d="M520 540l-22 66"/>
+    <path d="M590 520l-22 66"/>
+    <path d="M660 540l-22 66"/>
+    <path d="M730 520l-22 66"/>
+    <path d="M800 540l-22 66"/>
+    <path d="M870 520l-22 66"/>
+    <path d="M940 540l-22 66"/>
+    <path d="M1010 520l-22 66"/>
+  </g>
+</svg>

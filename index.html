@@ -4,27 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Orb</title>
+  <meta name="description" content="A simple weather app to quickly check current conditions by city.">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes.css">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="orb-header">
-      <h1>Weather Orb</h1>
-      <div class="orb-glow"></div>
-    </div>
-    <form id="weatherForm">
-      <input 
-        type="text" 
-        id="cityInput" 
-        placeholder="Enter a city..." 
-        required 
-        pattern="[A-Za-z\s\-]+" 
-        title="City name should only contain letters, spaces, or hyphens"
-      >
-      <button type="submit">Explore Weather</button>
-    </form>
-    <div id="weatherResult" class="weather-orb"></div>
+  <div class="app" role="application">
+    <header class="header">
+      <div class="orb-glow" aria-hidden="true"></div>
+      <h1 class="title">Weather Orb</h1>
+      <p class="subtitle">Check current weather by city in seconds.</p>
+    </header>
+
+    <main class="card">
+      <form id="weatherForm" class="search" novalidate>
+        <label class="label" for="cityInput">City</label>
+        <div class="field">
+          <input
+            type="search"
+            id="cityInput"
+            name="city"
+            placeholder="e.g., Colombo, LK"
+            autocomplete="address-level2"
+            autocapitalize="words"
+            enterkeyhint="search"
+            required
+            aria-describedby="helpText"
+          >
+          <button id="submitBtn" type="submit">Explore</button>
+        </div>
+        <div class="controls" aria-label="Preferences">
+          <div class="segmented" role="group" aria-label="Units">
+            <button type="button" class="seg" data-unit="metric" aria-pressed="true">°C</button>
+            <button type="button" class="seg" data-unit="imperial" aria-pressed="false">°F</button>
+          </div>
+        </div>
+        <p id="helpText" class="help">Tip: You can use “City, CountryCode” (e.g., “Paris, FR”).</p>
+
+        <div id="recentRow" class="recent" aria-label="Recent searches" hidden>
+          <div class="recent-title">Recent</div>
+          <div id="recentChips" class="chips"></div>
+        </div>
+      </form>
+
+      <section id="weatherResult" class="result" aria-live="polite" aria-busy="false"></section>
+    </main>
+
+    <footer class="footer">
+      <span class="footer-text">Powered by OpenWeather</span>
+    </footer>
   </div>
   <script src="app.js"></script>
 </body>
